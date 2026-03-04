@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <HeroText tagline="Contact" title="Let's Talk">
+    <Fragment slot="subtitle">
+      Ready to explore how <span class="text-accent dark:text-white">HippoChat</span> can solve your cross-organizational communication challenges? We'd love to hear from you.
+    </Fragment>
+  </HeroText>
+
+  <!-- Contact Form -->
+  <ContactUs
+    id="form"
+    title="Request a Demo"
+    subtitle="Tell us about your organization and how you're currently handling cross-organizational communication."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+      {
+        type: 'text',
+        name: 'organization',
+        label: 'Organization',
+      },
+      {
+        type: 'text',
+        name: 'role',
+        label: 'Role / Title',
+      },
+    ]}
+    textarea={{
+      label: 'Tell us about your use case',
+    }}
+    disclaimer={{
+      label:
+        'By submitting this form, you agree to be contacted about HippoChat. We respect your privacy and will not share your information.',
+    }}
+    description="We typically respond within 1-2 business days."
+  />
+
+  <!-- Other Ways to Reach Us -->
+  <Features2
+    title="Other Ways to Reach Us"
+    columns={2}
+    items={[
+      {
+        title: 'General Questions',
+        description:
+          'Have questions about <span class="text-accent dark:text-white">HippoChat</span>, our approach, or whether we\'re a fit for your organization? Reach out and we\'ll be happy to help.',
+        icon: 'tabler:help',
+      },
+      {
+        title: 'Security Questions',
+        description:
+          'Need details about our security architecture, compliance posture, or specific requirements? Our team can provide the technical details you need.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Partnership Inquiries',
+        description:
+          'Interested in partnering with <span class="text-accent dark:text-white">HippoChat</span>? We\'re always looking to work with organizations that share our mission.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Email',
+        description: 'hello@hippochat.health',
+        icon: 'tabler:mail',
+      },
+    ]}
+  />
+</Layout>

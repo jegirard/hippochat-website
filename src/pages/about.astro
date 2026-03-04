@@ -1,0 +1,119 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'About',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero tagline="About">
+    <Fragment slot="title">
+      Built for <span class="text-accent dark:text-white">Real Clinical Operations</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-accent dark:text-white">HippoChat</span> was created by people who understand the messy reality of cross-organizational clinical communication. We've seen the workarounds, the compliance gaps, and the frustration that comes from tools that weren't designed for how healthcare actually works.
+    </Fragment>
+  </Hero>
+
+  <!-- Mission -->
+  <Content
+    tagline="Our Mission"
+    title='Why We Built <span class="text-accent dark:text-white">HippoChat</span>'
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Healthcare organizations need to communicate with external partners securely and accountably. But every existing "solution" either creates compliance risk, IT headaches, or both.
+      </p>
+      <p>
+        We built <span class="text-accent dark:text-white">HippoChat</span> to solve this specific problem: secure, auditable messaging that respects organizational boundaries while enabling the collaboration modern care requires.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
+    </Fragment>
+  </Content>
+
+  <!-- What We Believe -->
+  <Features
+    tagline="Principles"
+    title="What We Believe"
+    columns={3}
+    items={[
+      {
+        title: 'Organizational boundaries matter',
+        description: "External users shouldn't need access to your internal systems. Clear separation creates better security and clearer accountability.",
+        icon: 'tabler:separator',
+      },
+      {
+        title: 'Compliance should be built-in, not bolted on',
+        description: 'HIPAA compliance needs to be in the architecture from day one.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Simple is better than complex',
+        description: "If external partners need IT tickets and credentialing, they'll use SMS instead. Onboarding should take minutes, not weeks.",
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- The Problem We Solve -->
+  <Features2
+    tagline="The Problem"
+    title="Workarounds That Put Care at Risk"
+    columns={2}
+    items={[
+      {
+        title: 'Missed messages delay care',
+        description: 'When communication relies on callbacks and pagers, critical context gets lost and response times suffer.',
+        icon: 'tabler:clock-exclamation',
+      },
+      {
+        title: 'Compliance gaps create liability',
+        description: 'Every text on a personal phone is a potential HIPAA violation waiting to surface in an audit.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'IT complexity slows partnerships',
+        description: 'Weeks of credentialing and provisioning before an external clinician can collaborate safely.',
+        icon: 'tabler:plug-connected-x',
+      },
+      {
+        title: 'Lost audit trails obscure accountability',
+        description: 'When there is no record of who said what and when, quality reviews and incident response suffer.',
+        icon: 'tabler:file-search',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-amber-50/40 dark:bg-amber-950/10"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Contact -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Fix Cross-Org Communication?</Fragment>
+    <Fragment slot="subtitle">
+      Let's discuss how <span class="text-accent dark:text-white">HippoChat</span> can work for your organization.
+      <br /><span class="text-sm">hello@hippochat.health</span>
+    </Fragment>
+  </CallToAction>
+</Layout>

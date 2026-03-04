@@ -1,0 +1,155 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Security & Compliance',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero
+    tagline="Security"
+    image={{ src: '~/assets/images/security-hero.png', alt: 'HippoChat security architecture overview', width: 1600, height: 1236 }}
+  >
+    <Fragment slot="title">
+      HIPAA-Aligned Messaging <span class="text-accent dark:text-white">Without System Entanglement</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Security comes from clear boundaries—not from forcing everyone into the same system.
+    </Fragment>
+  </Hero>
+
+  <!-- Compliance Posture -->
+  <Features
+    tagline="Compliance"
+    title="Compliance Posture"
+    columns={3}
+    items={[
+      {
+        title: 'HIPAA-aligned architecture',
+        description: 'Designed from the ground up for HIPAA compliance. Not a consumer app with a compliance layer bolted on.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'BAAs available',
+        description: 'Business Associate Agreements available for all deployments. Standard BAA terms or custom agreements.',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'Role-based access',
+        description: 'Fine-grained permissions that match clinical workflows. Users see what they need to see—nothing more.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Audit logging',
+        description: 'Complete audit trail for every message. Who sent what, when, to whom. Exportable for compliance review.',
+        icon: 'tabler:file-search',
+      },
+      {
+        title: 'Retention policies',
+        description: 'Configurable retention policies per organization or channel. Meet your compliance requirements without manual intervention.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Encryption',
+        description: 'Data encrypted in transit and at rest. TLS 1.3 for all communications.',
+        icon: 'tabler:lock-square',
+      },
+    ]}
+  />
+
+  <!-- Stats -->
+  <Stats
+    title="Security at a Glance"
+    stats={[
+      { title: 'HIPAA', amount: 'Aligned' },
+      { title: 'BAA', amount: 'Available' },
+      { title: 'Audit', amount: '100%' },
+      { title: 'Encryption', amount: 'TLS 1.3' },
+    ]}
+  />
+
+  <!-- Why Safer Than SMS -->
+  <Content
+    isReversed
+    tagline="Comparison"
+    title="Why This Is Safer Than SMS"
+    image={{
+      src: '~/assets/images/cross-org-architecture.webp',
+      alt: 'Secure architecture diagram',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold tracking-tight dark:text-white mb-2">SMS Reality</h3>
+          <ul class="list-disc list-inside space-y-1 text-muted">
+            <li>PHI stored on personal devices</li>
+            <li>No access controls</li>
+            <li>Messages persist indefinitely</li>
+            <li>No audit trail</li>
+            <li>Interceptable in transit</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold tracking-tight dark:text-white mb-2"><span class="text-accent dark:text-white">HippoChat</span></h3>
+          <ul class="list-disc list-inside space-y-1 text-muted">
+            <li>PHI stays in controlled environment</li>
+            <li>Role-based permissions</li>
+            <li>Configurable retention policies</li>
+            <li>Complete audit logging</li>
+            <li>TLS 1.3 encryption</li>
+          </ul>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Security Questions -->
+  <Features2
+    tagline="Questions?"
+    title="Have Security Questions?"
+    columns={2}
+    items={[
+      {
+        title: 'Security Architecture',
+        description: "We're happy to discuss our security architecture and technical implementation details.",
+        icon: 'tabler:building-fortress',
+      },
+      {
+        title: 'Compliance Requirements',
+        description: 'Our team can provide details about specific compliance requirements for your organization.',
+        icon: 'tabler:checklist',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">See Our Security in Action</Fragment>
+    <Fragment slot="subtitle">
+      Schedule a demo to see how <span class="text-accent dark:text-white">HippoChat</span> protects your organization's communications.
+    </Fragment>
+  </CallToAction>
+</Layout>

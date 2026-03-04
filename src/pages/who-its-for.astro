@@ -1,0 +1,103 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: "Who It's For",
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero tagline="Who It's For">
+    <Fragment slot="title">
+      Built for the People Responsible <span class="text-accent dark:text-white">When Messaging Fails</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Designed for operators, clinical leaders, and compliance teams—not consumer chat.
+    </Fragment>
+  </Hero>
+
+  <!-- Clinical Leadership -->
+  <Features
+    tagline="Personas"
+    title='Who Benefits from <span class="text-accent dark:text-white">HippoChat</span>'
+    columns={2}
+    items={[
+      {
+        title: 'Clinical Leadership',
+        description: 'Care coordination that doesn\'t break compliance. Documentation for quality review. Accountability when issues arise.',
+        icon: 'tabler:heart-rate-monitor',
+      },
+      {
+        title: 'Operations / Admin',
+        description: 'Simple onboarding for external partners. No IT tickets for every new user. Clear audit trails for disputes.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'CIO / IT',
+        description: 'No complex EHR integration projects. External users stay outside internal systems. SaaS deployment with proper tenant isolation.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Compliance / Security',
+        description: 'HIPAA-aligned architecture. BAA available for every deployment. Complete audit logging for compliance.',
+        icon: 'tabler:shield-lock',
+      },
+    ]}
+  />
+
+  <!-- What Matters to Each -->
+  <Features2
+    tagline="What Matters"
+    title="Addressing Your Specific Concerns"
+    columns={2}
+    items={[
+      {
+        title: 'Care Coordination',
+        description: 'Clinical leaders need faster coordination without unsafe workarounds.',
+        icon: 'tabler:stethoscope',
+      },
+      {
+        title: 'No IT Tickets',
+        description: 'Operations teams need simple onboarding, not weeks of credentialing.',
+        icon: 'tabler:ticket-off',
+      },
+      {
+        title: 'Clean Boundaries',
+        description: 'IT teams need external users to stay outside internal systems.',
+        icon: 'tabler:separator',
+      },
+      {
+        title: 'Full Audit Trails',
+        description: 'Compliance teams need complete logging and retention controls.',
+        icon: 'tabler:file-search',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-teal-50/50 dark:bg-teal-950/20"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">Talk to Someone Who Understands Your Challenges</Fragment>
+    <Fragment slot="subtitle">
+      We'll discuss how <span class="text-accent dark:text-white">HippoChat</span> addresses your specific role's needs.
+    </Fragment>
+  </CallToAction>
+</Layout>

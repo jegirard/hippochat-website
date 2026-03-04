@@ -1,0 +1,333 @@
+---
+export interface Props {
+  maxWidth?: string;
+}
+
+const { maxWidth = '300px' } = Astro.props;
+---
+
+<div class="mx-auto" style={`max-width: ${maxWidth}`}>
+  <div class="relative rounded-[3rem] border-[12px] border-gray-900 dark:border-gray-800 bg-gray-900 dark:bg-gray-800 shadow-2xl">
+    <!-- Dynamic Island -->
+    <div class="absolute top-0 inset-x-0 flex justify-center z-10">
+      <div class="w-[90px] h-[28px] bg-gray-900 dark:bg-gray-800 rounded-b-2xl"></div>
+    </div>
+
+    <!-- Screen -->
+    <div id="phone-screen" class="rounded-[2.1rem] overflow-hidden bg-white dark:bg-slate-900 aspect-[9/19.5] flex flex-col">
+
+      <!-- Status Bar -->
+      <div class="flex items-center justify-between px-5 pt-8 pb-1 text-[10px] font-semibold text-gray-900 dark:text-gray-100">
+        <span>9:41</span>
+        <div class="flex items-center gap-1">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+        </div>
+      </div>
+
+      <!-- Nav Bar -->
+      <div class="flex items-center justify-between px-3 py-2 border-b border-gray-200 dark:border-slate-700">
+        <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        <div class="text-center">
+          <div class="text-sm font-bold text-gray-900 dark:text-white">HippoChat</div>
+          <div class="text-[9px] text-green-600 dark:text-green-400 flex items-center justify-center gap-0.5">
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span>
+            Encrypted
+          </div>
+        </div>
+        <!-- Spacer to balance the back arrow -->
+        <div class="w-5"></div>
+      </div>
+
+      <!-- Chat Messages -->
+      <div id="chat-messages" class="flex-1 overflow-hidden px-3 py-3 flex flex-col gap-3"></div>
+
+      <!-- Input Bar -->
+      <div class="px-3 pb-4 pt-2 border-t border-gray-200 dark:border-slate-700">
+        <div class="flex items-center gap-2">
+          <div id="input-bar" class="flex-1 bg-gray-100 dark:bg-slate-800 rounded-full px-3 py-1.5 min-h-[28px] overflow-hidden relative">
+            <div class="overflow-hidden" style="line-height: 0.85">
+              <span id="input-text" class="text-[10px] text-gray-800 dark:text-gray-200 break-words"></span>
+              <span id="input-cursor" class="hidden text-[10px] text-primary animate-pulse">|</span>
+            </div>
+            <span id="input-placeholder" class="text-[10px] text-gray-400 dark:text-gray-500">Type a message...</span>
+          </div>
+          <div id="send-btn" class="w-7 h-7 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center flex-shrink-0 transition-colors duration-200">
+            <svg class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Home Indicator -->
+    <div class="absolute bottom-2 inset-x-0 flex justify-center z-10">
+      <div class="w-[100px] h-[4px] bg-gray-600 dark:bg-gray-500 rounded-full"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes msgAppear {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes msgFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes dotBounce {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-3px); }
+  }
+
+  @keyframes sendPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.85); }
+    100% { transform: scale(1); }
+  }
+
+  .msg-appear {
+    animation: msgAppear 0.4s ease-out forwards;
+  }
+
+  .msg-fadeout {
+    animation: msgFadeOut 0.6s ease-out forwards;
+  }
+
+  .typing-dots span:nth-child(1) { animation: dotBounce 1.4s infinite 0ms; }
+  .typing-dots span:nth-child(2) { animation: dotBounce 1.4s infinite 150ms; }
+  .typing-dots span:nth-child(3) { animation: dotBounce 1.4s infinite 300ms; }
+
+  .send-pulse {
+    animation: sendPulse 0.2s ease-in-out;
+  }
+</style>
+
+<script>
+  // Conversation script with roles and typing behavior
+  // "owner" = the person holding the phone (Hospital A / MD)
+  // "other" = the remote party (Clinic B / RN)
+  const conversation = [
+    {
+      role: 'owner',
+      org: 'Hospital A',
+      badge: 'MD',
+      text: 'Patient case update. Please coordinate with Clinic B regarding the new lab results.',
+    },
+    {
+      role: 'other',
+      org: 'Clinic B',
+      badge: 'RN',
+      text: "Received. We'll share the latest notes securely.",
+    },
+    {
+      role: 'owner',
+      org: 'Hospital A',
+      badge: 'MD',
+      text: "Thanks. Let's discuss next steps.",
+    },
+    {
+      role: 'other',
+      org: 'Clinic B',
+      badge: 'RN',
+      text: "Sounds good. I'll send the triage summary now.",
+    },
+  ];
+
+  // Incoming messages (Clinic B / RN) — LEFT side with avatar on left
+  function createIncomingBubble(msg: typeof conversation[0]) {
+    const wrapper = document.createElement('div');
+    wrapper.style.opacity = '0';
+    wrapper.innerHTML = `
+      <div class="text-[8px] font-semibold text-teal-600 dark:text-teal-400 mb-0.5">${msg.org}</div>
+      <div class="flex items-end gap-1.5">
+        <div class="w-6 h-6 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center flex-shrink-0">
+          <span class="text-[7px] font-bold text-teal-700 dark:text-teal-300">${msg.badge}</span>
+        </div>
+        <div class="bg-teal-50 dark:bg-teal-950/50 rounded-2xl rounded-bl-sm px-3 py-2 max-w-[80%]">
+          <p class="text-[11px] text-gray-800 dark:text-gray-200 leading-snug">${msg.text}</p>
+        </div>
+      </div>
+    `;
+    return wrapper;
+  }
+
+  // Owner messages (Hospital A / MD) — RIGHT side with avatar on right
+  function createOwnerBubble(msg: typeof conversation[0], showReceipt = false) {
+    const wrapper = document.createElement('div');
+    wrapper.style.opacity = '0';
+
+    const receiptHtml = showReceipt
+      ? `<div class="read-receipt mt-0.5 mr-8 flex items-center justify-end gap-1 opacity-0">
+           <svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+           <span class="text-[8px] text-gray-400 dark:text-gray-500">Read</span>
+         </div>`
+      : '';
+
+    wrapper.innerHTML = `
+      <div class="text-[8px] font-semibold text-primary mb-0.5 text-right">${msg.org}</div>
+      <div class="flex items-end gap-1.5 justify-end">
+        <div class="bg-blue-50 dark:bg-slate-800 rounded-2xl rounded-br-sm px-3 py-2 max-w-[80%]">
+          <p class="text-[11px] text-gray-800 dark:text-gray-200 leading-snug">${msg.text}</p>
+        </div>
+        <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
+          <span class="text-[7px] font-bold text-primary">${msg.badge}</span>
+        </div>
+      </div>
+      ${receiptHtml}
+    `;
+    return wrapper;
+  }
+
+  // Typing indicator — LEFT side (incoming party typing)
+  function createTypingIndicator() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'typing-indicator';
+    wrapper.style.opacity = '0';
+    wrapper.innerHTML = `
+      <div class="flex items-end gap-1.5">
+        <div class="w-6 h-6 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center flex-shrink-0">
+          <span class="text-[7px] font-bold text-teal-700 dark:text-teal-300">RN</span>
+        </div>
+        <div class="bg-gray-100 dark:bg-slate-700 rounded-2xl px-4 py-2.5 typing-dots">
+          <div class="flex gap-1 items-center">
+            <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+            <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+            <span class="w-1.5 h-1.5 bg-gray-400 rounded-full"></span>
+          </div>
+        </div>
+      </div>
+    `;
+    return wrapper;
+  }
+
+  function showEl(el: HTMLElement) {
+    el.style.opacity = '';
+    el.classList.add('msg-appear');
+  }
+
+  function wait(ms: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  // Type text into the input bar character by character
+  async function typeIntoInput(text: string): Promise<void> {
+    const inputText = document.getElementById('input-text')!;
+    const inputCursor = document.getElementById('input-cursor')!;
+    const inputPlaceholder = document.getElementById('input-placeholder')!;
+    const sendBtn = document.getElementById('send-btn')!;
+
+    inputPlaceholder.classList.add('hidden');
+    inputCursor.classList.remove('hidden');
+    inputText.textContent = '';
+
+    // Type each character
+    for (let i = 0; i < text.length; i++) {
+      inputText.textContent = text.slice(0, i + 1);
+      // Vary typing speed for realism
+      const delay = 20 + Math.random() * 30;
+      await wait(delay);
+    }
+
+    // Activate send button color
+    sendBtn.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+    sendBtn.classList.add('bg-primary');
+
+    await wait(400);
+
+    // Tap send button animation
+    sendBtn.classList.add('send-pulse');
+    await wait(200);
+    sendBtn.classList.remove('send-pulse');
+
+    // Clear input
+    inputText.textContent = '';
+    inputCursor.classList.add('hidden');
+    inputPlaceholder.classList.remove('hidden');
+    sendBtn.classList.remove('bg-primary');
+    sendBtn.classList.add('bg-gray-300', 'dark:bg-gray-600');
+  }
+
+  async function runAnimation() {
+    const container = document.getElementById('chat-messages');
+    if (!container) return;
+
+    // Clear
+    container.innerHTML = '';
+    let lastOwnerBubble: HTMLElement | null = null;
+
+    for (let i = 0; i < conversation.length; i++) {
+      const msg = conversation[i];
+      const nextMsg = conversation[i + 1];
+
+      if (msg.role === 'owner') {
+        // Owner: type into input, then send
+        await typeIntoInput(msg.text);
+        await wait(100);
+
+        // Show read receipt if the next message is from the other party (they read it)
+        const willBeRead = nextMsg && nextMsg.role === 'other';
+        const bubble = createOwnerBubble(msg, willBeRead);
+        container.appendChild(bubble);
+        showEl(bubble);
+        lastOwnerBubble = bubble;
+        await wait(1200);
+
+      } else {
+        // Show "Read" on the previous owner bubble (they read it before replying)
+        if (lastOwnerBubble) {
+          const receipt = lastOwnerBubble.querySelector('.read-receipt');
+          if (receipt) {
+            (receipt as HTMLElement).style.opacity = '1';
+            (receipt as HTMLElement).classList.add('msg-appear');
+          }
+        }
+        await wait(600);
+
+        // Other party: show typing dots, then replace with message
+        const typing = createTypingIndicator();
+        container.appendChild(typing);
+        showEl(typing);
+
+        await wait(1600);
+
+        // Fade out typing
+        typing.classList.add('msg-fadeout');
+        await wait(400);
+        typing.remove();
+
+        // Show message
+        const bubble = createIncomingBubble(msg);
+        container.appendChild(bubble);
+        showEl(bubble);
+        await wait(1200);
+      }
+    }
+
+    // Pause, then fade everything out and restart
+    await wait(3000);
+
+    container.querySelectorAll(':scope > *').forEach((el) => {
+      (el as HTMLElement).classList.add('msg-fadeout');
+    });
+
+    await wait(800);
+    runAnimation();
+  }
+
+  // Start when visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        runAnimation();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const screen = document.getElementById('phone-screen');
+  if (screen) observer.observe(screen);
+</script>

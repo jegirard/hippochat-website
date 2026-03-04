@@ -1,0 +1,155 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import PhoneMockup from '~/components/ui/PhoneMockup.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Product',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero
+    tagline="Product"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Messaging Built for <span class="text-accent dark:text-white">Cross-Organizational Care</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Most secure messaging tools assume everyone belongs to one organization. Healthcare doesn't work that way.
+    </Fragment>
+
+    <Fragment slot="image">
+      <PhoneMockup />
+    </Fragment>
+  </Hero>
+
+  <!-- What HippoChat Is -->
+  <Content
+    tagline='What <span class="text-accent dark:text-white">HippoChat</span> Is'
+    title="Purpose-Built for Cross-Organization Communication"
+    image={{
+      src: '~/assets/images/why-hippochat.png',
+      alt: 'HippoChat secure platform diagram',
+      width: 768,
+      height: 512,
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        <span class="text-accent dark:text-white">HippoChat</span> exists for the specific scenario where clinicians need to coordinate care but don't—and shouldn't—share systems. Where giving external users access to your EHR or internal messaging creates more problems than it solves.
+      </p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Purpose-built for healthcare</li>
+        <li>Respects organizational boundaries</li>
+        <li>Secure and auditable</li>
+      </ul>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Core Capabilities -->
+  <Features
+    tagline="Capabilities"
+    title="Core Capabilities"
+    columns={3}
+    items={[
+      {
+        title: 'Cross-organization user separation',
+        description: 'Each organization maintains its own users and boundaries.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Secure auditable messaging',
+        description: 'Every message is logged with full attribution.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Role-based access controls',
+        description: 'Fine-grained permissions that match clinical workflows.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Configurable retention policies',
+        description: 'Set retention rules that match your compliance requirements.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Simple onboarding',
+        description: 'External clinicians can be invited and start in minutes.',
+        icon: 'tabler:user-plus',
+      },
+      {
+        title: 'SaaS multi-tenant deployment',
+        description: 'Cloud-native architecture with strong tenant isolation.',
+        icon: 'tabler:cloud',
+      },
+    ]}
+  />
+
+  <!-- What HippoChat Replaces -->
+  <Features2
+    tagline="Replaces"
+    title='What <span class="text-accent dark:text-white">HippoChat</span> Replaces'
+    columns={2}
+    items={[
+      {
+        title: 'SMS and personal phones',
+        description: 'No more PHI on personal devices.',
+        icon: 'tabler:device-mobile-off',
+      },
+      {
+        title: 'Pager systems',
+        description: 'Real messaging with audit trails, not codes and callbacks.',
+        icon: 'tabler:bell-off',
+      },
+      {
+        title: 'Secure texting tools (single-org)',
+        description: 'Built for multiple organizations with clear boundaries.',
+        icon: 'tabler:message-off',
+      },
+      {
+        title: '"Temporary" access to internal systems',
+        description: 'No more EHR accounts that never get deprovisioned.',
+        icon: 'tabler:key-off',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50/50 dark:bg-blue-950/20"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">See <span class="text-accent dark:text-white">HippoChat</span> in Action</Fragment>
+    <Fragment slot="subtitle">
+      Learn how <span class="text-accent dark:text-white">HippoChat</span> can solve your cross-organizational communication challenges.
+    </Fragment>
+  </CallToAction>
+</Layout>

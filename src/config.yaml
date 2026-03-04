@@ -1,0 +1,38 @@
+site:
+  name: HippoChat
+  site: 'https://hippochat.health'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: HippoChat
+    template: '%s — HippoChat'
+  description: 'HIPAA-compliant messaging for clinical teams across organizations. Communicate with external nurses, answering services, and partner clinicians securely.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: HippoChat
+    images:
+      - url: '~/assets/images/og-image.png'
+        width: 1200
+        height: 628
+    type: website
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'system'

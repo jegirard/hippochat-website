@@ -1,0 +1,163 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Build vs Status Quo',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero tagline="Build vs Status Quo">
+    <Fragment slot="title">
+      Stop Forcing Cross-Org Care Into <span class="text-accent dark:text-white">Single-Org Tools</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      SMS, pagers, and internal secure-texting systems all fail for the same reason: they weren't designed for the reality of cross-organizational clinical communication.
+    </Fragment>
+  </Hero>
+
+  <!-- The Core Problem -->
+  <Features2
+    tagline="The Problem"
+    title="Every 'Solution' Creates New Problems"
+    columns={2}
+    items={[
+      {
+        title: 'SMS',
+        description: 'Fast but non-compliant. PHI on personal devices. No audit trail. A compliance nightmare waiting to happen.',
+        icon: 'tabler:device-mobile-off',
+      },
+      {
+        title: 'Pagers',
+        description: 'Reliable but primitive. No context. No documentation. Callbacks that create more problems than they solve.',
+        icon: 'tabler:bell-off',
+      },
+      {
+        title: 'Internal Secure Texting',
+        description: 'Great for internal use. But giving external users access means IT headaches and blurred organizational boundaries.',
+        icon: 'tabler:message-off',
+      },
+      {
+        title: 'EHR Access',
+        description: '"Just give them an Epic account" creates permanent access, credentialing delays, and deprovisioning problems.',
+        icon: 'tabler:key-off',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-rose-50/30 dark:bg-rose-950/10"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Comparison Table -->
+  <Content
+    title='Status Quo vs <span class="text-accent dark:text-white">HippoChat</span>'
+    image={{
+      src: '~/assets/images/status-quo-vs-hippochat.webp',
+      alt: 'Status quo vs HippoChat comparison',
+    }}
+  >
+    <Fragment slot="content">
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead class="text-xs uppercase bg-gray-100 dark:bg-gray-700">
+            <tr>
+              <th class="px-4 py-3">Capability</th>
+              <th class="px-4 py-3">Status Quo</th>
+              <th class="px-4 py-3 text-accent font-bold">HippoChat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">Cross-org communication</td>
+              <td class="px-4 py-3">SMS, phone calls, workarounds</td>
+              <td class="px-4 py-3">Purpose-built secure messaging</td>
+            </tr>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">HIPAA compliance</td>
+              <td class="px-4 py-3">Gaps and risk</td>
+              <td class="px-4 py-3">Built-in, BAA available</td>
+            </tr>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">Audit trail</td>
+              <td class="px-4 py-3">Fragmented or nonexistent</td>
+              <td class="px-4 py-3">Complete, per-message logging</td>
+            </tr>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">External user onboarding</td>
+              <td class="px-4 py-3">Days to weeks (IT/credentialing)</td>
+              <td class="px-4 py-3">Minutes (self-service invite)</td>
+            </tr>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">System entanglement</td>
+              <td class="px-4 py-3">External users in internal systems</td>
+              <td class="px-4 py-3">Complete separation</td>
+            </tr>
+            <tr class="border-b dark:border-gray-700">
+              <td class="px-4 py-3 font-medium">Offboarding</td>
+              <td class="px-4 py-3">"Temporary" access that lingers</td>
+              <td class="px-4 py-3">Clean, immediate removal</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">Deployment time</td>
+              <td class="px-4 py-3">Integration projects, months</td>
+              <td class="px-4 py-3">SaaS, live in days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- Why Just Give Them Access Fails -->
+  <Features2
+    tagline="Access Isn't the Answer"
+    title='Why "Just Give Them Access" Fails'
+    columns={2}
+    items={[
+      {
+        title: "Access doesn't scale",
+        description: "A triage service working with 50 physician clients can't maintain 50 EHR accounts with 50 credential renewal cycles.",
+        icon: 'tabler:chart-arrows',
+      },
+      {
+        title: 'Access blurs boundaries',
+        description: 'When external partners can see internal patient data, organizational separation breaks down.',
+        icon: 'tabler:eye-off',
+      },
+      {
+        title: 'Access creates liability',
+        description: 'External users with internal system access muddy the waters when something goes wrong.',
+        icon: 'tabler:alert-triangle',
+      },
+      {
+        title: 'Access lingers',
+        description: '"Temporary" access has a way of becoming permanent. Deprovisioning is always someone else\'s problem—until audit.',
+        icon: 'tabler:clock-off',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">Designed for the Reality of Modern Care Delivery</Fragment>
+    <Fragment slot="subtitle">
+      See how <span class="text-accent dark:text-white">HippoChat</span> addresses the real challenges of cross-organizational communication.
+    </Fragment>
+  </CallToAction>
+</Layout>

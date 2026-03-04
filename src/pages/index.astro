@@ -1,0 +1,192 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import PhoneMockup from '~/components/ui/PhoneMockup.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'HippoChat — HIPAA-Compliant Messaging for Clinical Teams',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+      { text: 'Learn more', href: '#features' },
+    ]}
+  >
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">HippoChat</span> is HIPAA-Compliant Messaging for <span class="text-accent dark:text-white">Clinical Teams</span> Across Organizations
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Communicate with external nurses, answering services, and partner clinicians—without letting them into your EHR, secure texting system, or internal infrastructure.
+    </Fragment>
+
+    <Fragment slot="image">
+      <PhoneMockup />
+    </Fragment>
+  </Hero>
+
+  <!-- Built for Cross-Organizational Care -->
+  <Features
+    id="features"
+    tagline="Purpose-Built"
+    title="Built for Cross-Organizational Care"
+    columns={3}
+    items={[
+      {
+        title: 'Cross-Organization User Separation',
+        description: 'Each org keeps its own users and boundaries.',
+        icon: 'tabler:building',
+      },
+      {
+        title: 'Secure, Auditable Messaging',
+        description: 'Every message logged with full attribution.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Role-Based Access Controls',
+        description: 'Permissions that match clinical workflows.',
+        icon: 'tabler:lock',
+      },
+      {
+        title: 'Configurable Retention Policies',
+        description: 'Retention rules aligned to your compliance needs.',
+        icon: 'tabler:clock',
+      },
+      {
+        title: 'Simple External User Onboarding',
+        description: 'Invite external clinicians in minutes.',
+        icon: 'tabler:user-plus',
+        callToAction: { text: 'Learn more', href: '/product' },
+      },
+      {
+        title: 'BAA Available',
+        description: 'Business Associate Agreements for all deployments.',
+        icon: 'tabler:file-certificate',
+        callToAction: { text: 'Learn more', href: '/product' },
+      },
+    ]}
+  />
+
+  <!-- Why HippoChat — Pain to Value -->
+  <Content
+    isReversed
+    tagline="The Problem"
+    title='Why <span class="text-accent dark:text-white">HippoChat</span>?'
+    items={[
+      {
+        title: 'NO MORE SMS and personal phones for clinical communication',
+      },
+      {
+        title: 'NO MORE pager systems with no context or audit trails',
+      },
+      {
+        title: 'NO MORE secure texting tools that assume one organization',
+      },
+      {
+        title: 'NO MORE forcing external vendors into internal systems',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/why-hippochat.png',
+      alt: 'HippoChat secure platform diagram showing nurse and provider communication with encrypted messaging',
+      width: 768,
+      height: 512,
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">HippoChat</span> Bridges the Gap</h3>
+      Secure messaging across organizational boundaries. External users never touch internal systems. Clear auditability and control. Designed for real-world care networks.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Common Use Cases -->
+  <Features2
+    tagline="Use Cases"
+    title="Common Use Cases"
+    items={[
+      {
+        title: 'Nurse Triage Services',
+        description: 'Triage nurses and physicians communicate securely without sharing EHR access.',
+        icon: 'tabler:stethoscope',
+        callToAction: { text: 'See use case', href: '/use-cases' },
+      },
+      {
+        title: 'Answering Services',
+        description: 'Auditable after-hours messages replace risky phone and SMS workflows.',
+        icon: 'tabler:phone',
+        callToAction: { text: 'See use case', href: '/use-cases' },
+      },
+      {
+        title: 'On-Call Coverage Teams',
+        description: 'Onboard locum tenens and cross-coverage providers in minutes.',
+        icon: 'tabler:user-check',
+        callToAction: { text: 'See use case', href: '/use-cases' },
+      },
+    ]}
+  />
+
+  <!-- Who Benefits -->
+  <Features
+    title='Who Benefits from <span class="text-accent dark:text-white">HippoChat</span>'
+    columns={2}
+    items={[
+      {
+        title: 'Clinical Leadership',
+        description: 'Faster coordination with documentation for quality review.',
+        icon: 'tabler:heart-rate-monitor',
+      },
+      {
+        title: 'Operations / Admin',
+        description: 'Lower compliance risk and simple partner onboarding.',
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'CIO / IT',
+        description: 'Clean system boundaries with no cross-org IAM headaches.',
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Compliance / Security',
+        description: 'Full audit trails, retention controls, and BAA for every deployment.',
+        icon: 'tabler:shield-lock',
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Stop Choosing Between Speed and Compliance
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      See how <span class="text-accent dark:text-white">HippoChat</span> can solve your cross-organizational communication challenges.
+    </Fragment>
+  </CallToAction>
+</Layout>

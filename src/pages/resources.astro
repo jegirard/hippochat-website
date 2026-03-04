@@ -1,0 +1,147 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Resources',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero tagline="Resources">
+    <Fragment slot="title">
+      Resources for <span class="text-accent dark:text-white">Healthcare Communication</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Everything you need to understand cross-organizational clinical communication, HIPAA-compliant messaging, and how <span class="text-accent dark:text-white">HippoChat</span> works.
+    </Fragment>
+  </Hero>
+
+  <!-- FAQs -->
+  <FAQs
+    tagline="FAQs"
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'What is HippoChat?',
+        description: '<span class="text-accent dark:text-white">HippoChat</span> is a HIPAA-compliant messaging platform purpose-built for cross-organizational clinical communication. It lets clinical teams from different organizations communicate securely without sharing systems.',
+      },
+      {
+        title: 'Is HippoChat HIPAA compliant?',
+        description: 'Yes. <span class="text-accent dark:text-white">HippoChat</span> is designed from the ground up for HIPAA compliance with encryption in transit and at rest, complete audit logging, configurable retention policies, and BAA availability for all deployments.',
+      },
+      {
+        title: 'How is HippoChat different from secure texting tools?',
+        description: 'Most secure texting tools assume everyone belongs to one organization. <span class="text-accent dark:text-white">HippoChat</span> is purpose-built for the scenario where clinicians across different organizations need to communicate—without giving external users access to internal systems.',
+      },
+      {
+        title: 'How long does onboarding take?',
+        description: "External users can be invited and start messaging in minutes. There's no complex credentialing, no IT tickets, and no EHR integration required.",
+      },
+      {
+        title: 'What does HippoChat replace?',
+        description: '<span class="text-accent dark:text-white">HippoChat</span> replaces SMS, personal phone calls, pager systems, and the practice of giving external users temporary access to internal secure texting or EHR systems.',
+      },
+      {
+        title: 'Can I get a BAA?',
+        description: 'Yes. Business Associate Agreements are available for all deployments. Contact us at hello@hippochat.health to discuss your specific requirements.',
+      },
+    ]}
+  />
+
+  <!-- Key Terms Glossary -->
+  <Features2
+    tagline="Glossary"
+    title="Key Terms Glossary"
+    columns={2}
+    items={[
+      {
+        title: 'HIPAA',
+        description: 'Health Insurance Portability and Accountability Act. Federal law that sets standards for protecting sensitive patient health information.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'BAA',
+        description: 'Business Associate Agreement. A contract between a covered entity and a business associate that establishes permitted uses and disclosures of PHI.',
+        icon: 'tabler:file-certificate',
+      },
+      {
+        title: 'PHI',
+        description: 'Protected Health Information. Any individually identifiable health information held or transmitted by a covered entity or its business associates.',
+        icon: 'tabler:lock-square',
+      },
+      {
+        title: 'Audit Trail',
+        description: 'A chronological record of system activities. In <span class="text-accent dark:text-white">HippoChat</span>, every message is logged with full attribution for compliance review.',
+        icon: 'tabler:file-search',
+      },
+    ]}
+  />
+
+  <!-- Resource Cards -->
+  <Features2
+    tagline="Learn"
+    title="Explore Our Resources"
+    columns={2}
+    items={[
+      {
+        title: 'Build vs Status Quo',
+        description: 'Understand why SMS, pagers, and internal tools fail for cross-org communication—and what to do instead.',
+        icon: 'tabler:arrows-exchange',
+        callToAction: {
+          text: 'Read more',
+          href: '/build-vs-status-quo',
+        },
+      },
+      {
+        title: 'Security & Compliance',
+        description: 'Learn about our HIPAA-aligned architecture, encryption, audit logging, and BAA availability.',
+        icon: 'tabler:shield-check',
+        callToAction: {
+          text: 'Read more',
+          href: '/security',
+        },
+      },
+      {
+        title: 'Use Cases',
+        description: 'See how <span class="text-accent dark:text-white">HippoChat</span> works for nurse triage, answering services, and on-call coverage teams.',
+        icon: 'tabler:stethoscope',
+        callToAction: {
+          text: 'Read more',
+          href: '/use-cases',
+        },
+      },
+      {
+        title: 'Product Overview',
+        description: 'Explore the core capabilities of <span class="text-accent dark:text-white">HippoChat</span> and what it replaces in your workflow.',
+        icon: 'tabler:app-window',
+        callToAction: {
+          text: 'Read more',
+          href: '/product',
+        },
+      },
+    ]}
+  />
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">Ready to Learn More?</Fragment>
+    <Fragment slot="subtitle">
+      Schedule a demo to see <span class="text-accent dark:text-white">HippoChat</span> in action.
+    </Fragment>
+  </CallToAction>
+</Layout>

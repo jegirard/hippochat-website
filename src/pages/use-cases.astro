@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Use Cases',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <Hero tagline="Use Cases">
+    <Fragment slot="title">
+      When Clinical Teams <span class="text-accent dark:text-white">Don't Share Systems</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-accent dark:text-white">HippoChat</span> exists for the moments when care crosses organizational boundaries.
+    </Fragment>
+  </Hero>
+
+  <!-- Nurse Triage Services -->
+  <Content
+    isReversed
+    tagline="Use Case"
+    title="Nurse Triage Services"
+    items={[
+      { title: 'SMS creates compliance risk' },
+      { title: 'Client EHR access is impractical at scale' },
+      { title: 'Phone trees lack documentation' },
+    ]}
+    image={{
+      src: '~/assets/images/use-case-nurse-triage.webp',
+      alt: 'Nurse triage services',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
+      <p class="mb-4">Triage nurses need to communicate with client physicians quickly and securely—but they shouldn't need access to each client's EHR or internal messaging system.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Secure messaging without system access</li>
+        <li>Full audit trail per client relationship</li>
+        <li>Clear accountability and documentation</li>
+      </ul>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-teal-50/50 dark:bg-teal-950/20"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Answering Services -->
+  <Content
+    tagline="Use Case"
+    title="Answering Services"
+    items={[
+      { title: 'Phone messages get lost or misheard' },
+      { title: 'SMS violates HIPAA' },
+      { title: 'No practical way to prove what was communicated' },
+    ]}
+    image={{
+      src: '~/assets/images/use-case-answering-service.webp',
+      alt: 'Answering services',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
+      <p class="mb-4">Medical answering services handle after-hours communication for dozens of practices—but the current options are all problematic.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Written, auditable messages</li>
+        <li>HIPAA-compliant by design</li>
+        <li>Clear chain of custody for every communication</li>
+      </ul>
+    </Fragment>
+  </Content>
+
+  <!-- On-Call Coverage -->
+  <Content
+    isReversed
+    tagline="Use Case"
+    title="On-Call Coverage"
+    items={[
+      { title: '"Temporary" EHR access lingers' },
+      { title: 'Credentialing delays impact care' },
+      { title: 'Workarounds create liability' },
+    ]}
+    image={{
+      src: '~/assets/images/use-case-on-call.webp',
+      alt: 'On-call coverage',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
+      <p class="mb-4">Coverage arrangements—locum tenens, moonlighting, cross-coverage agreements—require communication without permanent system integration.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Fast onboarding for temporary coverage</li>
+        <li>Clear boundaries—no system entanglement</li>
+        <li>Easy offboarding when coverage ends</li>
+      </ul>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
+    </Fragment>
+  </Content>
+
+  <!-- CTA -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Request a Demo',
+        href: '/contact',
+      },
+    ]}
+  >
+    <Fragment slot="title">See How <span class="text-accent dark:text-white">HippoChat</span> Fits Your Workflow</Fragment>
+    <Fragment slot="subtitle">
+      We'll show you exactly how <span class="text-accent dark:text-white">HippoChat</span> addresses your specific use case.
+    </Fragment>
+  </CallToAction>
+</Layout>
