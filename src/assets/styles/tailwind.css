@@ -90,3 +90,9 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* Active nav link indicator */
+.aw-link-active {
+  color: var(--aw-color-accent);
+  border-bottom: 2px solid var(--aw-color-accent);
+}
