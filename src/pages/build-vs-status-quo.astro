@@ -57,16 +57,9 @@ const metadata = {
   </Features2>
 
   <!-- Comparison Table -->
-  <Content
-    title='Status Quo vs <span class="text-accent dark:text-white">HippoChat</span>'
-    image={{
-      src: '~/assets/images/status-quo-vs-hippochat.png',
-      alt: 'Status quo vs HippoChat comparison',
-      width: 768,
-      height: 512,
-    }}
-  >
-    <Fragment slot="content">
+  <section class="py-12 md:py-16">
+    <div class="mx-auto max-w-4xl px-4 md:px-8">
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-8 font-heading text-center">Status Quo vs <span class="text-accent dark:text-white">HippoChat</span></h2>
       <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
           <thead class="text-xs uppercase bg-gray-100 dark:bg-gray-700">
@@ -115,8 +108,8 @@ const metadata = {
           </tbody>
         </table>
       </div>
-    </Fragment>
-  </Content>
+    </div>
+  </section>
 
   <!-- Why Just Give Them Access Fails -->
   <Features2
