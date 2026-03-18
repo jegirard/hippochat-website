@@ -3,23 +3,13 @@ import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
-const siteUrl = import.meta.env.SITE || 'https://hippochat.health';
-const redirectUrl = `${siteUrl}/thank-you`;
 ---
 
-<form action="https://api.web3forms.com/submit" method="POST">
+<form id="contact-form" method="POST">
   <input type="hidden" name="access_key" value="0dc81cfd-97d4-4466-b1a8-e3ab439d35f6" />
   <input type="hidden" name="subject" value="New HippoChat Demo Request" />
   <input type="hidden" name="from_name" value="HippoChat Website" />
-  <input type="hidden" name="redirect" id="redirect" />
   <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-
-<script define:vars={{ redirectUrl }}>
-  document.addEventListener('DOMContentLoaded', () => {
-    const el = document.getElementById('redirect');
-    if (el) el.value = window.location.origin + '/thank-you';
-  });
-</script>
   {
     inputs &&
       inputs.map(
@@ -99,3 +89,26 @@ const redirectUrl = `${siteUrl}/thank-you`;
     )
   }
 </form>
+
+<script>
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form as HTMLFormElement);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData,
+        });
+        if (res.ok) {
+          window.location.href = '/thank-you';
+        } else {
+          alert('Something went wrong. Please try again or email us directly.');
+        }
+      } catch {
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    });
+  }
+</script>

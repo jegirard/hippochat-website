@@ -1,6 +1,6 @@
 site:
   name: HippoChat
-  site: 'https://hippochat.health'
+  site: 'https://hippochathealth.com'
   base: '/'
   trailingSlash: false
 
