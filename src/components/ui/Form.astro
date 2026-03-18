@@ -5,7 +5,11 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form name="contact" method="POST" data-netlify="true">
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="0dc81cfd-97d4-4466-b1a8-e3ab439d35f6" />
+  <input type="hidden" name="subject" value="New HippoChat Demo Request" />
+  <input type="hidden" name="from_name" value="HippoChat Website" />
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
   {
     inputs &&
       inputs.map(
