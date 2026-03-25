@@ -33,6 +33,7 @@ analytics:
   vendors:
     googleAnalytics:
       id: G-3WXELBEY99
+      partytown: false
 
 # TODO: Add Google Search Console verification
 # 1. Go to https://search.google.com/search-console
