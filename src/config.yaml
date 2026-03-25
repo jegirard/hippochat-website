@@ -32,7 +32,7 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null # TODO: Add your GA4 Measurement ID (e.g., G-XXXXXXXXXX)
+      id: G-3WXELBEY99
 
 # TODO: Add Google Search Console verification
 # 1. Go to https://search.google.com/search-console
