@@ -14,23 +14,55 @@ const metadata = {
   <!-- Hero -->
   <Hero tagline="Use Cases">
     <Fragment slot="title">
-      When Clinical Teams <span class="text-accent dark:text-white">Don't Share Systems</span>
+      Clinical Teams <span class="text-accent dark:text-white">Across Different Systems</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="text-accent dark:text-white">HippoChat</span> exists for the moments when care crosses organizational boundaries.
+      <span class="text-accent dark:text-white">HippoChat</span> connects care teams that span multiple organizations—securely and compliantly.
     </Fragment>
   </Hero>
 
-  <!-- Nurse Triage Services -->
+  <!-- Hospitals & Health Organizations -->
   <Content
     isReversed
     tagline="Use Case"
+    title="Hospitals & Health Organizations"
+    items={[
+      { title: 'Partner facilities and external providers are on different systems' },
+      { title: 'Coordinating across departments and affiliates means juggling multiple platforms' },
+      { title: 'Sharing PHI with outside teams needs to be secure and documented' },
+    ]}
+    image={{
+      src: '~/assets/images/use-case-on-call.png',
+      alt: 'Hospital and health organization communication',
+      width: 768,
+      height: 512,
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Reality</h3>
+      <p class="mb-4">Hospitals and health organizations work with external providers, partner facilities, and community organizations every day—often on completely different systems.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>One secure channel for cross-organization communication</li>
+        <li>Everyone stays on their own system while messaging seamlessly</li>
+        <li>Full audit trail across every partner relationship</li>
+      </ul>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-teal-50/50 dark:bg-teal-950/20"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Nurse Triage Services -->
+  <Content
+    tagline="Use Case"
     title="Nurse Triage Services"
     items={[
-      { title: 'SMS creates compliance risk' },
-      { title: 'Client EHR access is impractical at scale' },
-      { title: 'Phone trees lack documentation' },
+      { title: 'Triage teams and client providers are on different systems' },
+      { title: 'Secure communication is critical but EHR access for every client is impractical' },
+      { title: 'Every interaction needs clear documentation' },
     ]}
     image={{
       src: '~/assets/images/use-case-nurse-triage.webp',
@@ -40,29 +72,26 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
-      <p class="mb-4">Triage nurses need to communicate with client physicians quickly and securely—but they shouldn't need access to each client's EHR or internal messaging system.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Reality</h3>
+      <p class="mb-4">Triage nurses need to communicate with on-call providers quickly and securely—across organizations that each have their own systems.</p>
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
       <ul class="list-disc list-inside space-y-1">
-        <li>Secure messaging without system access</li>
+        <li>Secure messaging across organizations</li>
         <li>Full audit trail per client relationship</li>
         <li>Clear accountability and documentation</li>
       </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-teal-50/50 dark:bg-teal-950/20"></div>
     </Fragment>
   </Content>
 
   <!-- Answering Services -->
   <Content
+    isReversed
     tagline="Use Case"
     title="Answering Services"
     items={[
       { title: 'Phone messages get lost or misheard' },
-      { title: 'SMS violates HIPAA' },
-      { title: 'No practical way to prove what was communicated' },
+      { title: 'SMS is a compliance risk for PHI' },
+      { title: 'There is no easy way to prove what was communicated' },
     ]}
     image={{
       src: '~/assets/images/use-case-answering-service.webp',
@@ -72,8 +101,8 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
-      <p class="mb-4">Medical answering services handle after-hours communication for dozens of practices—but the current options are all problematic.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Reality</h3>
+      <p class="mb-4">Medical answering services handle after-hours communication for dozens of practices—and need a secure, documented way to reach on-call providers.</p>
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
       <ul class="list-disc list-inside space-y-1">
         <li>Written, auditable messages</li>
@@ -81,38 +110,37 @@ const metadata = {
         <li>Clear chain of custody for every communication</li>
       </ul>
     </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
+    </Fragment>
   </Content>
 
-  <!-- On-Call Coverage -->
+  <!-- EMS & First Responders -->
   <Content
-    isReversed
     tagline="Use Case"
-    title="On-Call Coverage"
+    title="EMS & First Responders"
     items={[
-      { title: '"Temporary" EHR access lingers' },
-      { title: 'Credentialing delays impact care' },
-      { title: 'Workarounds create liability' },
+      { title: 'Field teams and receiving facilities are on separate systems' },
+      { title: 'Critical patient information needs to arrive before the patient does' },
+      { title: 'Every handoff needs to be documented and auditable' },
     ]}
     image={{
-      src: '~/assets/images/use-case-on-call.png',
-      alt: 'On-call coverage',
+      src: '~/assets/images/use-case-ems.png',
+      alt: 'EMS and first responder communication',
       width: 768,
       height: 512,
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Problem</h3>
-      <p class="mb-4">Coverage arrangements—locum tenens, moonlighting, cross-coverage agreements—require communication without permanent system integration.</p>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">The Reality</h3>
+      <p class="mb-4">EMS teams need to share patient information with hospitals and receiving providers in real time—across organizations that are often on completely different systems.</p>
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2 mt-6">With <span class="text-accent dark:text-white">HippoChat</span></h3>
       <ul class="list-disc list-inside space-y-1">
-        <li>Fast onboarding for temporary coverage</li>
-        <li>Clear boundaries—no system entanglement</li>
-        <li>Easy offboarding when coverage ends</li>
+        <li>Secure, real-time messaging between field teams and facilities</li>
+        <li>PHI shared compliantly across organizational boundaries</li>
+        <li>Full documentation of every handoff</li>
       </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-slate-50 dark:bg-slate-900/30"></div>
     </Fragment>
   </Content>
 

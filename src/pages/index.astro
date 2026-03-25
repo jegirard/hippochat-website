@@ -23,7 +23,7 @@ const metadata = {
         text: 'Request a Demo',
         href: '/contact',
       },
-      { text: 'Learn more', href: '#features' },
+      { text: 'Learn more', href: '#use-cases' },
     ]}
   >
     <Fragment slot="title">
@@ -31,7 +31,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Communicate with external nurses, answering services, and partner clinicians—without letting them into your EHR, secure texting system, or internal infrastructure.
+      Share PHI securely with external nurses, answering services, and partner clinicians—while preserving the security of your EHR, texting system, and internal infrastructure.
     </Fragment>
 
     <Fragment slot="image">
@@ -47,34 +47,34 @@ const metadata = {
     columns={3}
     items={[
       {
-        title: 'Cross-Organization User Separation',
-        description: 'Each org keeps its own users and boundaries.',
+        title: 'Separate Users, Shared Communication',
+        description: 'Each organization keeps its own users and boundaries—you collaborate across them.',
         icon: 'tabler:building',
       },
       {
-        title: 'Secure, Auditable Messaging',
-        description: 'Every message logged with full attribution.',
+        title: 'Know Who Said What, When',
+        description: 'Every message is logged so you always know who sent it, when, and who saw it.',
         icon: 'tabler:shield-check',
       },
       {
-        title: 'Role-Based Access Controls',
-        description: 'Permissions that match clinical workflows.',
+        title: 'Permissions That Fit Your Workflow',
+        description: 'Control who can see and do what, matched to how your team actually works.',
         icon: 'tabler:lock',
       },
       {
-        title: 'Configurable Retention Policies',
-        description: 'Retention rules aligned to your compliance needs.',
+        title: 'Keep Records on Your Terms',
+        description: 'Keep messages as long or as short as your compliance requirements need.',
         icon: 'tabler:clock',
       },
       {
-        title: 'Simple External User Onboarding',
-        description: 'Invite external clinicians in minutes.',
+        title: 'Onboard Partners in Minutes',
+        description: 'Invite external clinicians and they can start messaging right away.',
         icon: 'tabler:user-plus',
         callToAction: { text: 'Learn more', href: '/product' },
       },
       {
         title: 'BAA Available',
-        description: 'Business Associate Agreements for all deployments.',
+        description: 'Business Associate Agreements ready for every deployment.',
         icon: 'tabler:file-certificate',
         callToAction: { text: 'Learn more', href: '/product' },
       },
@@ -84,20 +84,20 @@ const metadata = {
   <!-- Why HippoChat — Pain to Value -->
   <Content
     isReversed
-    tagline="The Problem"
+    tagline="Better Together"
     title='Why <span class="text-accent dark:text-white">HippoChat</span>?'
     items={[
       {
-        title: 'NO MORE SMS and personal phones for clinical communication',
+        title: 'Replace SMS and personal phones with secure, compliant messaging',
       },
       {
-        title: 'NO MORE pager systems with no context or audit trails',
+        title: 'Real messaging with audit trails instead of pager codes and callbacks',
       },
       {
-        title: 'NO MORE secure texting tools that assume one organization',
+        title: 'Messaging designed for multiple organizations from the start',
       },
       {
-        title: 'NO MORE forcing external vendors into internal systems',
+        title: 'Connect external partners securely—on their own terms, outside your systems',
       },
     ]}
     image={{
@@ -108,8 +108,8 @@ const metadata = {
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">HippoChat</span> Bridges the Gap</h3>
-      Secure messaging across organizational boundaries. External users never touch internal systems. Clear auditability and control. Designed for real-world care networks.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"><span class="text-accent dark:text-white">HippoChat</span> Connects Teams Across Systems</h3>
+      Secure messaging that works across organizational boundaries. Everyone stays on their own system while communicating seamlessly. Full auditability, full control. Designed for real-world care networks.
     </Fragment>
 
     <Fragment slot="bg">
@@ -119,12 +119,20 @@ const metadata = {
 
   <!-- Common Use Cases -->
   <Features2
+    id="use-cases"
     tagline="Use Cases"
     title="Common Use Cases"
+    columns={2}
     items={[
       {
+        title: 'Hospitals & Health Organizations',
+        description: 'Coordinate care across departments, partner facilities, and external providers—all on one secure platform.',
+        icon: 'tabler:building-hospital',
+        callToAction: { text: 'See use case', href: '/use-cases' },
+      },
+      {
         title: 'Nurse Triage Services',
-        description: 'Triage nurses and physicians communicate securely without sharing EHR access.',
+        description: 'Triage nurses and on-call providers communicate securely across organizations.',
         icon: 'tabler:stethoscope',
         callToAction: { text: 'See use case', href: '/use-cases' },
       },
@@ -135,9 +143,9 @@ const metadata = {
         callToAction: { text: 'See use case', href: '/use-cases' },
       },
       {
-        title: 'On-Call Coverage Teams',
-        description: 'Onboard locum tenens and cross-coverage providers in minutes.',
-        icon: 'tabler:user-check',
+        title: 'EMS & First Responders',
+        description: 'Connect field teams with hospitals and receiving providers in real time.',
+        icon: 'tabler:ambulance',
         callToAction: { text: 'See use case', href: '/use-cases' },
       },
     ]}
@@ -160,7 +168,7 @@ const metadata = {
       },
       {
         title: 'CIO / IT',
-        description: 'Clean system boundaries with no cross-org IAM headaches.',
+        description: 'Clean system boundaries—no managing outside users in your internal systems.',
         icon: 'tabler:server',
       },
       {
@@ -182,11 +190,11 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Stop Choosing Between Speed and Compliance
+      Fast, Compliant Communication Across Organizations
     </Fragment>
 
     <Fragment slot="subtitle">
-      See how <span class="text-accent dark:text-white">HippoChat</span> can solve your cross-organizational communication challenges.
+      See how <span class="text-accent dark:text-white">HippoChat</span> connects your clinical teams—securely and compliantly.
     </Fragment>
   </CallToAction>
 </Layout>
