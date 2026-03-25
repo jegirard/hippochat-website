@@ -3,117 +3,121 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: March 04, 2026
+_Last updated_: March 25, 2026
 
-Please read these terms and conditions carefully before using Our Service.
+# Terms of Service
 
-## Interpretation and Definitions
+These terms of service ("terms") govern your access to and use of the HippoChat website located at [https://hippochathealth.com](https://hippochathealth.com) (the "website"). The website is operated by HippoChat ("HippoChat," "we," "us," or "our"), a California-based company.
 
-### Interpretation
+By accessing or using the website, you agree to be bound by these terms. If you do not agree, you should not access or use the website.
 
-The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
+---
 
-### Definitions
+## 1. Scope and Acceptance
 
-For the purposes of these Terms and Conditions:
+These terms apply solely to the HippoChat marketing website at hippochathealth.com. They do not govern access to or use of the HippoChat messaging platform, application programming interfaces, or any related services.
 
-- **Affiliate** means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+Use of the HippoChat platform is governed by separate agreements between HippoChat and its customers, including a Master Service Agreement (MSA) and, where applicable, a Business Associate Agreement (BAA) executed in accordance with the Health Insurance Portability and Accountability Act (HIPAA). If there is any conflict between these terms and a separately executed MSA or BAA, the executed agreement controls with respect to the subject matter it covers.
 
-- **Country** refers to: California, United States
+By continuing to access the website after we post changes to these terms, you accept the revised terms.
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to HippoChat.
+## 2. Description of the Website
 
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+The website is a marketing and informational resource. It provides general information about HippoChat, our products, and services available to healthcare organizations. The website may include product descriptions, blog posts, case studies, contact forms, and other informational content.
 
-- **Service** refers to the Website.
+The website is not a medical device, does not provide medical advice, and is not intended to be used for clinical decision-making. No content on the website should be construed as professional medical guidance.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+## 3. Intellectual Property
 
-- **Website** refers to HippoChat, accessible from [https://hippochathealth.com](https://hippochathealth.com)
+All content on the website -- including text, graphics, logos, images, audio, video, software, and underlying code -- is the property of HippoChat or its licensors and is protected by applicable intellectual property laws.
 
-- **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+"HippoChat," the HippoChat logo, and all related names, marks, and designs are trademarks of HippoChat. You may not use any HippoChat trademarks without our prior written consent.
 
-## Acknowledgment
+You are granted a limited, non-exclusive, non-transferable, revocable license to access and view the website for informational purposes. This license does not include any right to reproduce, distribute, modify, create derivative works from, publicly display, or commercially exploit any website content.
 
-These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+## 4. Acceptable Use
 
-Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.
+When using the website, you agree not to:
 
-By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+- Scrape, crawl, or use any automated means to access, index, or collect website content without our prior written consent.
+- Attempt to gain unauthorized access to any portion of the website, its servers, or any systems or networks connected to the website.
+- Interfere with or disrupt the integrity or performance of the website or the data it contains.
+- Transmit any viruses, malware, or other harmful code.
+- Use the website for any unlawful purpose or in violation of any applicable law or regulation.
+- Reverse engineer, decompile, or disassemble any aspect of the website.
+- Remove, alter, or obscure any proprietary notices, labels, or marks on the website.
+- Impersonate any person or entity, or misrepresent your affiliation with any person or entity.
 
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
+We reserve the right to restrict or terminate access to the website for any user who violates these terms.
 
-Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+## 5. Account Terms
 
-## Links to Other Websites
+The website may allow you to submit information through contact forms, request demos, or subscribe to communications. Any account required to access the HippoChat platform is separate from the website and is governed by the applicable MSA and BAA.
 
-Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.
+If you submit information through the website, you represent that the information you provide is accurate, current, and complete. You are responsible for maintaining the confidentiality of any login credentials associated with any website-based account functionality.
 
-The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.
+## 6. Privacy
 
-We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.
+Our collection and use of personal information in connection with the website is described in our [Privacy Policy](/privacy). By using the website, you acknowledge that you have reviewed our privacy policy and understand how we collect, use, and share your information.
 
-## Termination
+## 7. Healthcare Disclaimers
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
+HippoChat provides a HIPAA-compliant messaging platform for clinical teams. However, this website is an informational resource only. Nothing on the website constitutes medical advice, a medical diagnosis, or a recommendation for any specific treatment or course of action.
 
-Upon termination, Your right to use the Service will cease immediately.
+The website is not a medical device and is not subject to FDA regulation as such. No information provided on the website is intended to serve as a substitute for professional medical judgment.
 
-## Limitation of Liability
+Any use of the HippoChat platform that involves the creation, receipt, maintenance, or transmission of protected health information (PHI) is governed by a separately executed BAA between HippoChat and the applicable covered entity or business associate. These website terms do not create any obligations under HIPAA.
 
-Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service or 100 USD if You haven't purchased anything through the Service.
+## 8. Third-Party Links
 
-To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.
+The website may contain links to third-party websites, services, or resources that are not owned or controlled by HippoChat. We provide these links for convenience only and do not endorse, and are not responsible for, the content, privacy practices, or availability of any third-party website.
 
-Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.
+Accessing third-party links is at your own risk. We encourage you to review the terms and privacy policies of any third-party website you visit.
 
-## "AS IS" and "AS AVAILABLE" Disclaimer
+## 9. Limitation of Liability
 
-The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.
+To the maximum extent permitted by applicable law, in no event will HippoChat, its affiliates, officers, directors, employees, agents, or licensors be liable for any indirect, incidental, special, consequential, or punitive damages -- including but not limited to loss of profits, revenue, data, goodwill, or business opportunity -- arising out of or related to your access to or use of (or inability to access or use) the website, regardless of the theory of liability and whether or not HippoChat has been advised of the possibility of such damages.
 
-Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) as to the accuracy, reliability, or currency of any information or content provided through the Service; or (iv) that the Service, its servers, the content, or e-mails sent from or on behalf of the Company are free of viruses, scripts, trojan horses, worms, malware, timebombs or other harmful components.
+To the extent permitted by applicable law, HippoChat's total aggregate liability arising out of or related to these terms or the website will not exceed one thousand U.S. dollars (USD $1,000).
 
-Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.
+These limitations apply regardless of whether the liability is based on warranty, contract, tort, statute, or any other legal theory.
 
-## Governing Law
+Some jurisdictions do not allow the exclusion or limitation of certain damages. In those jurisdictions, the limitations above apply to the fullest extent permitted by law.
 
-The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.
+## 10. Indemnification
 
-## Disputes Resolution
+You agree to indemnify, defend, and hold harmless HippoChat and its affiliates, officers, directors, employees, and agents from and against any claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or related to: (a) your use of the website in violation of these terms; (b) your violation of any applicable law or regulation; or (c) any content or information you submit through the website.
 
-If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.
+## 11. Disclaimer of Warranties
 
-## For European Union (EU) Users
+The website is provided on an "as is" and "as available" basis without warranties of any kind, whether express, implied, or statutory. To the maximum extent permitted by applicable law, HippoChat disclaims all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement.
 
-If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.
+HippoChat does not warrant that the website will be uninterrupted, error-free, secure, or free of viruses or other harmful components, or that any defects will be corrected. We do not warrant the accuracy, completeness, or reliability of any content on the website.
 
-## United States Legal Compliance
+No advice or information, whether oral or written, obtained from HippoChat or through the website creates any warranty not expressly stated in these terms.
 
-You represent and warrant that (i) You are not located in a country that is subject to the United States government embargo, or that has been designated by the United States government as a "terrorist supporting" country, and (ii) You are not listed on any United States government list of prohibited or restricted parties.
+## 12. Governing Law and Dispute Resolution
 
-## Severability and Waiver
+These terms are governed by and construed in accordance with the laws of the State of California, without regard to its conflict-of-law principles.
 
-### Severability
+Before initiating any formal dispute resolution proceeding, you agree to first contact us at [hello@hippochathealth.com](mailto:hello@hippochathealth.com) and attempt to resolve the dispute informally for at least thirty (30) days. Most concerns can be resolved through this process.
 
-If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.
+If the dispute cannot be resolved informally, both parties agree to submit to the exclusive personal jurisdiction of the state and federal courts located in California for resolution of any disputes arising under or related to these terms.
 
-### Waiver
+## 13. Severability
 
-Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.
+If any provision of these terms is found to be unenforceable or invalid by a court of competent jurisdiction, that provision will be enforced to the maximum extent permissible and the remaining provisions will remain in full force and effect. The waiver of any provision of these terms will not be considered a waiver of any other provision, and no failure to exercise any right under these terms constitutes a waiver of that right.
 
-## Translation Interpretation
+## 14. Changes to These Terms
 
-These Terms and Conditions may have been translated if We have made them available to You on our Service. You agree that the original English text shall prevail in the case of a dispute.
+We may update these terms from time to time. When we make changes, we will revise the "Last updated" date at the top of this page.
 
-## Changes to These Terms and Conditions
+For material changes, we will make reasonable efforts to provide notice -- such as posting a prominent notice on the website or, where applicable, sending an email. Your continued use of the website after any changes become effective constitutes your acceptance of the revised terms. If you do not agree to the updated terms, please discontinue use of the website.
 
-We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.
+## 15. Contact
 
-By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.
+If you have questions about these terms, please contact us at:
 
-## Contact Us
-
-If you have any questions about these Terms and Conditions, You can contact us:
-
-- By email: hello@hippochathealth.com
+**HippoChat**
+Email: [hello@hippochathealth.com](mailto:hello@hippochathealth.com)
+Website: [https://hippochathealth.com](https://hippochathealth.com)
