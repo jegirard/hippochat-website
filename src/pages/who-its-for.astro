@@ -5,17 +5,25 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: "Who It's For",
+  description: 'HippoChat serves clinical leaders, operations teams, CIOs, and compliance officers who need secure cross-organization messaging.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: "Who It's For", url: '/who-its-for' },
+    ]}
+  />
   <!-- Hero -->
   <Hero tagline="Who It's For">
     <Fragment slot="title">
-      Built for the People Responsible <span class="text-accent dark:text-white">When Messaging Fails</span>
+      Secure Clinical Messaging for <span class="text-accent dark:text-white">Every Role</span>
     </Fragment>
 
     <Fragment slot="subtitle">

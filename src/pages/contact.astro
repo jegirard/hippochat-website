@@ -3,15 +3,23 @@ import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'Contact',
+  description: 'Request a demo of HippoChat. Tell us about your organization and cross-organizational communication needs. We respond within 1-2 business days.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Contact', url: '/contact' },
+    ]}
+  />
   <!-- Hero -->
-  <HeroText tagline="Contact" title="Let's Talk">
+  <HeroText tagline="Contact" title="Request a HippoChat Demo">
     <Fragment slot="subtitle">
       Ready to explore how <span class="text-accent dark:text-white">HippoChat</span> can solve your cross-organizational communication challenges? We'd love to hear from you.
     </Fragment>

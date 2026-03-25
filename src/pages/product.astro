@@ -7,13 +7,22 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'Product',
+  description: 'Explore HippoChat capabilities: cross-organization messaging, audit trails, configurable retention, fast onboarding, and BAA availability.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    type="product"
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Product', url: '/product' },
+    ]}
+  />
   <!-- Hero -->
   <Hero
     tagline="Product"
@@ -54,9 +63,9 @@ const metadata = {
         <span class="text-accent dark:text-white">HippoChat</span> exists for the reality that clinical teams coordinate care across different systems. Not everyone is on the same EHR or messaging platform—and they don't need to be. HippoChat connects them securely.
       </p>
       <ul class="list-disc list-inside space-y-2">
-        <li>Purpose-built for healthcare</li>
+        <li>Purpose-built for healthcare — <a href="/use-cases" class="text-accent hover:underline">see use cases</a></li>
         <li>Respects organizational boundaries</li>
-        <li>Secure and auditable</li>
+        <li><a href="/security" class="text-accent hover:underline">Secure and auditable</a></li>
       </ul>
     </Fragment>
 

@@ -32,7 +32,14 @@ apps:
 analytics:
   vendors:
     googleAnalytics:
-      id: null
+      id: null # TODO: Add your GA4 Measurement ID (e.g., G-XXXXXXXXXX)
+
+# TODO: Add Google Search Console verification
+# 1. Go to https://search.google.com/search-console
+# 2. Add property for hippochathealth.com
+# 3. Choose "HTML tag" verification method
+# 4. Set googleSiteVerificationId below to the content value from the meta tag
+# googleSiteVerificationId: 'your-verification-id'
 
 ui:
   theme: 'light:only'

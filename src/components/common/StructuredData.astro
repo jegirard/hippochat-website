@@ -1,0 +1,91 @@
+---
+export interface Props {
+  type?: 'organization' | 'product' | 'faq';
+  breadcrumbs?: { name: string; url: string }[];
+  faqItems?: { question: string; answer: string }[];
+}
+
+const { type, breadcrumbs, faqItems } = Astro.props;
+
+const siteUrl = 'https://hippochathealth.com';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'HippoChat',
+  url: siteUrl,
+  logo: `${siteUrl}/favicon.svg`,
+  description: 'HIPAA-compliant messaging for clinical teams across organizations.',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'hello@hippochathealth.com',
+    contactType: 'sales',
+  },
+};
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'HippoChat',
+  applicationCategory: 'HealthApplication',
+  operatingSystem: 'Web',
+  description: 'HIPAA-compliant messaging platform built for cross-organizational clinical communication.',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/OnlineOnly',
+  },
+  featureList: [
+    'Cross-organization messaging',
+    'HIPAA-compliant architecture',
+    'Complete audit trails',
+    'Configurable retention policies',
+    'Role-based access controls',
+    'BAA availability',
+    'Fast external user onboarding',
+  ],
+};
+
+const faqSchema = faqItems
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+
+const breadcrumbSchema = breadcrumbs
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumbs.map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: crumb.url.startsWith('http') ? crumb.url : `${siteUrl}${crumb.url}`,
+      })),
+    }
+  : null;
+---
+
+{type === 'organization' && (
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+)}
+
+{type === 'product' && (
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+)}
+
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+)}
+
+{breadcrumbSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+)}

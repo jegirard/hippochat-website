@@ -5,13 +5,29 @@ import Hero from '~/components/widgets/Hero.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'Resources',
+  description: 'FAQs, glossary, and guides about HIPAA-compliant messaging, cross-organization clinical communication, and how HippoChat works.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Resources', url: '/resources' },
+    ]}
+    faqItems={[
+      { question: 'What is HippoChat?', answer: 'HippoChat is a HIPAA-compliant messaging platform purpose-built for cross-organizational clinical communication. It lets clinical teams from different organizations communicate securely without sharing systems.' },
+      { question: 'Is HippoChat HIPAA compliant?', answer: 'Yes. HippoChat is designed from the ground up for HIPAA compliance with encryption in transit and at rest, complete audit logging, configurable retention policies, and BAA availability for all deployments.' },
+      { question: 'How is HippoChat different from secure texting tools?', answer: 'Most secure texting tools assume everyone belongs to one organization. HippoChat is purpose-built for the scenario where clinicians across different organizations need to communicate securely.' },
+      { question: 'How long does onboarding take?', answer: 'External users can be invited and start messaging in minutes. No complex credentialing, no IT tickets, and no EHR integration required.' },
+      { question: 'What does HippoChat replace?', answer: 'HippoChat replaces SMS, personal phone calls, pager systems, and the practice of giving external users temporary access to internal secure texting or EHR systems.' },
+      { question: 'Can I get a BAA?', answer: 'Yes. Business Associate Agreements are available for all deployments. Contact us at hello@hippochathealth.com.' },
+    ]}
+  />
   <!-- Hero -->
   <Hero tagline="Resources">
     <Fragment slot="title">

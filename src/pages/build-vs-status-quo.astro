@@ -5,17 +5,26 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'Build vs Status Quo',
+  description: 'Why SMS, pagers, and single-org secure texting fail for cross-organization clinical communication — and how HippoChat solves the problem.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'Resources', url: '/resources' },
+      { name: 'Build vs Status Quo', url: '/build-vs-status-quo' },
+    ]}
+  />
   <!-- Hero -->
   <Hero tagline="Build vs Status Quo">
     <Fragment slot="title">
-      Stop Forcing Cross-Org Care Into <span class="text-accent dark:text-white">Single-Org Tools</span>
+      Cross-Organization Messaging: <span class="text-accent dark:text-white">Status Quo vs HippoChat</span>
     </Fragment>
 
     <Fragment slot="subtitle">

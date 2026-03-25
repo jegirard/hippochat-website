@@ -7,14 +7,21 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'HippoChat — HIPAA-Compliant Messaging for Clinical Teams',
   ignoreTitleTemplate: true,
+  description: 'HippoChat is HIPAA-compliant messaging built for clinical teams across organizations. Share PHI securely with external nurses, providers, and partners.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+    ]}
+  />
   <!-- Hero -->
   <Hero
     actions={[

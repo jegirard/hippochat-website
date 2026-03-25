@@ -6,17 +6,25 @@ import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import StructuredData from '~/components/common/StructuredData.astro';
 
 const metadata = {
   title: 'About',
+  description: 'HippoChat was built by people who understand the reality of cross-organizational clinical communication. Learn about our mission and principles.',
 };
 ---
 
 <Layout metadata={metadata}>
+  <StructuredData
+    breadcrumbs={[
+      { name: 'Home', url: '/' },
+      { name: 'About', url: '/about' },
+    ]}
+  />
   <!-- Hero -->
   <Hero tagline="About">
     <Fragment slot="title">
-      Built for <span class="text-accent dark:text-white">Real Clinical Operations</span>
+      About <span class="text-accent dark:text-white">HippoChat</span> — Built for Real Clinical Operations
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -34,7 +42,7 @@ const metadata = {
         Healthcare organizations need to communicate with external partners securely and accountably. But every existing "solution" either creates compliance risk, IT headaches, or both.
       </p>
       <p>
-        We built <span class="text-accent dark:text-white">HippoChat</span> to solve this specific problem: secure, auditable messaging that respects organizational boundaries while enabling the collaboration modern care requires.
+        We built <span class="text-accent dark:text-white">HippoChat</span> to solve this specific problem: <a href="/security" class="text-accent hover:underline">secure, auditable messaging</a> that respects organizational boundaries while enabling the collaboration modern care requires. See the <a href="/product" class="text-accent hover:underline">product overview</a> or explore our <a href="/use-cases" class="text-accent hover:underline">use cases</a>.
       </p>
     </Fragment>
 
