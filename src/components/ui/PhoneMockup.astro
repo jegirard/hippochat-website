@@ -255,20 +255,27 @@ const { maxWidth = '300px' } = Astro.props;
     const container = document.getElementById('chat-messages');
     if (!container) return;
 
-    // Clear
-    container.innerHTML = '';
+    // Clear all children safely
+    while (container.firstChild) container.removeChild(container.firstChild);
     let lastOwnerBubble: HTMLElement | null = null;
 
-    for (let i = 0; i < conversation.length; i++) {
+    // Always start with the first message already on screen (never blank)
+    const firstMsg = conversation[0];
+    const willFirstBeRead = conversation[1] && conversation[1].role === 'other';
+    const firstBubble = createOwnerBubble(firstMsg, willFirstBeRead);
+    container.appendChild(firstBubble);
+    showEl(firstBubble);
+    lastOwnerBubble = firstBubble;
+
+    // Continue from message 1 onward (second message starts typing immediately)
+    for (let i = 1; i < conversation.length; i++) {
       const msg = conversation[i];
       const nextMsg = conversation[i + 1];
 
       if (msg.role === 'owner') {
-        // Owner: type into input, then send
         await typeIntoInput(msg.text);
         await wait(100);
 
-        // Show read receipt if the next message is from the other party (they read it)
         const willBeRead = nextMsg && nextMsg.role === 'other';
         const bubble = createOwnerBubble(msg, willBeRead);
         container.appendChild(bubble);
@@ -277,7 +284,6 @@ const { maxWidth = '300px' } = Astro.props;
         await wait(1200);
 
       } else {
-        // Show "Read" on the previous owner bubble (they read it before replying)
         if (lastOwnerBubble) {
           const receipt = lastOwnerBubble.querySelector('.read-receipt');
           if (receipt) {
@@ -287,19 +293,16 @@ const { maxWidth = '300px' } = Astro.props;
         }
         await wait(600);
 
-        // Other party: show typing dots, then replace with message
         const typing = createTypingIndicator();
         container.appendChild(typing);
         showEl(typing);
 
         await wait(1600);
 
-        // Fade out typing
         typing.classList.add('msg-fadeout');
         await wait(400);
         typing.remove();
 
-        // Show message
         const bubble = createIncomingBubble(msg);
         container.appendChild(bubble);
         showEl(bubble);
@@ -307,7 +310,7 @@ const { maxWidth = '300px' } = Astro.props;
       }
     }
 
-    // Pause, then fade everything out and restart
+    // Pause, then fade everything out and restart (loop always begins with first message visible)
     await wait(3000);
 
     container.querySelectorAll(':scope > *').forEach((el) => {
